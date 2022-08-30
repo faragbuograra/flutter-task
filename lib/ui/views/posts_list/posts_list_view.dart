@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture_starter/ui/views/posts_list/paged_albums_list_view.dart';
 import 'package:flutter_clean_architecture_starter/ui/views/posts_list/paged_posts_list_view.dart';
 import 'package:flutter_clean_architecture_starter/ui/views/posts_list/posts_list_view_model.dart';
 import 'package:stacked/stacked.dart';
@@ -39,10 +40,8 @@ class _PostsListViewState extends State<PostsListView>
       builder: (context, model, child) => Scaffold(
           // drawer: Drawer(child: CustomerDrawerMenu()),
           appBar: MyAppBar(),
-          body: PagedPostsListView({
-          }, onPostsClicked: (professional) async {
-
-          })),
+          body: PagedAlbumsListView({},
+              onAlbumsClicked: (professional) async {})),
     );
   }
 }

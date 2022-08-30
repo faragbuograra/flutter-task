@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'post.dart';
+part of 'album.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Post> _$postSerializer = new _$PostSerializer();
+Serializer<Album> _$albumSerializer = new _$AlbumSerializer();
 
-class _$PostSerializer implements StructuredSerializer<Post> {
+class _$AlbumSerializer implements StructuredSerializer<Album> {
   @override
-  final Iterable<Type> types = const [Post, _$Post];
+  final Iterable<Type> types = const [Album, _$Album];
   @override
-  final String wireName = 'Post';
+  final String wireName = 'Album';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Post object,
+  Iterable<Object?> serialize(Serializers serializers, Album object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -32,27 +32,13 @@ class _$PostSerializer implements StructuredSerializer<Post> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.body;
-    if (value != null) {
-      result
-        ..add('body')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.created_at;
-    if (value != null) {
-      result
-        ..add('created_at')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
-    }
     return result;
   }
 
   @override
-  Post deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Album deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new PostBuilder();
+    final result = new AlbumBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -68,14 +54,6 @@ class _$PostSerializer implements StructuredSerializer<Post> {
           result.title = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'body':
-          result.body = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'created_at':
-          result.created_at = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
-          break;
       }
     }
 
@@ -83,57 +61,46 @@ class _$PostSerializer implements StructuredSerializer<Post> {
   }
 }
 
-class _$Post extends Post {
+class _$Album extends Album {
   @override
   final int? id;
   @override
   final String? title;
-  @override
-  final String? body;
-  @override
-  final DateTime? created_at;
 
-  factory _$Post([void Function(PostBuilder)? updates]) =>
-      (new PostBuilder()..update(updates))._build();
+  factory _$Album([void Function(AlbumBuilder)? updates]) =>
+      (new AlbumBuilder()..update(updates))._build();
 
-  _$Post._({this.id, this.title, this.body, this.created_at}) : super._();
+  _$Album._({this.id, this.title}) : super._();
 
   @override
-  Post rebuild(void Function(PostBuilder) updates) =>
+  Album rebuild(void Function(AlbumBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PostBuilder toBuilder() => new PostBuilder()..replace(this);
+  AlbumBuilder toBuilder() => new AlbumBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Post &&
-        id == other.id &&
-        title == other.title &&
-        body == other.body &&
-        created_at == other.created_at;
+    return other is Album && id == other.id && title == other.title;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc(0, id.hashCode), title.hashCode), body.hashCode),
-        created_at.hashCode));
+    return $jf($jc($jc(0, id.hashCode), title.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Post')
+    return (newBuiltValueToStringHelper(r'Album')
           ..add('id', id)
-          ..add('title', title)
-          ..add('body', body)
-          ..add('created_at', created_at))
+          ..add('title', title))
         .toString();
   }
 }
 
-class PostBuilder implements Builder<Post, PostBuilder> {
-  _$Post? _$v;
+class AlbumBuilder implements Builder<Album, AlbumBuilder> {
+  _$Album? _$v;
 
   int? _id;
   int? get id => _$this._id;
@@ -143,45 +110,34 @@ class PostBuilder implements Builder<Post, PostBuilder> {
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
-  String? _body;
-  String? get body => _$this._body;
-  set body(String? body) => _$this._body = body;
+  AlbumBuilder();
 
-  DateTime? _created_at;
-  DateTime? get created_at => _$this._created_at;
-  set created_at(DateTime? created_at) => _$this._created_at = created_at;
-
-  PostBuilder();
-
-  PostBuilder get _$this {
+  AlbumBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
       _title = $v.title;
-      _body = $v.body;
-      _created_at = $v.created_at;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(Post other) {
+  void replace(Album other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Post;
+    _$v = other as _$Album;
   }
 
   @override
-  void update(void Function(PostBuilder)? updates) {
+  void update(void Function(AlbumBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Post build() => _build();
+  Album build() => _build();
 
-  _$Post _build() {
-    final _$result = _$v ??
-        new _$Post._(id: id, title: title, body: body, created_at: created_at);
+  _$Album _build() {
+    final _$result = _$v ?? new _$Album._(id: id, title: title);
     replace(_$result);
     return _$result;
   }

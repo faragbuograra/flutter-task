@@ -3,6 +3,7 @@ library serializers;
 import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
+import '/core/models/album/album.dart';
 
 import '/core/models/post/post.dart';
 
@@ -10,9 +11,7 @@ part 'serializers.g.dart';
 
 /// List of models that will have a serializer generated for them.
 ///   - Usually you only add models here that you expect to fetch from some API
-@SerializersFor([
-  Post,
-])
+@SerializersFor([Post, Album])
 
 /// Can add additional plugins that will serialize types like [DateTime]
 ///   - It is also possible to write your own Serializer plugins for type that
